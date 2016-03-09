@@ -4,6 +4,6 @@ The detail steps:
 
 http://documentation.lemonway.fr/pr/java-tutorial-consume-api-webservice
 
-Warning:
+**Warning**
 
-The `lw.api` artifacts committed in this repository is up-to-date. You must to follow the tutorial above to re-generate the artifacts.
+The committed `lw.api` artifacts might **not** up-to-date in this repository. You must to follow the tutorial above to re-generate the artifacts.
