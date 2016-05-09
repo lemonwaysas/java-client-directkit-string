@@ -2,7 +2,7 @@ This example shows how to call the [LemonWay DirectKit API](http://documentation
 
 The detail steps:
 
-http://documentation.lemonway.fr/pr/java-tutorial-consume-api-webservice
+http://documentation.lemonway.fr/pr/tutorials/java-tutorials/java-tutorial-consume-api-webservice
 
 **Warning**
 
