@@ -33,6 +33,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="version" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="walletIp" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="walletUa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="isB2B" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -58,7 +59,8 @@ import javax.xml.bind.annotation.XmlType;
     "language",
     "version",
     "walletIp",
-    "walletUa"
+    "walletUa",
+    "isB2B"
 })
 @XmlRootElement(name = "RegisterSddMandate")
 public class RegisterSddMandate {
@@ -79,6 +81,7 @@ public class RegisterSddMandate {
     protected String version;
     protected String walletIp;
     protected String walletUa;
+    protected String isB2B;
 
     /**
      * Gets the value of the wallet property.
@@ -462,6 +465,30 @@ public class RegisterSddMandate {
      */
     public void setWalletUa(String value) {
         this.walletUa = value;
+    }
+
+    /**
+     * Gets the value of the isB2B property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getIsB2B() {
+        return isB2B;
+    }
+
+    /**
+     * Sets the value of the isB2B property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setIsB2B(String value) {
+        this.isB2B = value;
     }
 
 }

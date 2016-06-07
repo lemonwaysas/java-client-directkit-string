@@ -24,6 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="version" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="walletIp" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="walletUa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="chequeType" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -40,7 +41,8 @@ import javax.xml.bind.annotation.XmlType;
     "language",
     "version",
     "walletIp",
-    "walletUa"
+    "walletUa",
+    "chequeType"
 })
 @XmlRootElement(name = "GetMoneyInChequeDetails")
 public class GetMoneyInChequeDetails {
@@ -52,6 +54,7 @@ public class GetMoneyInChequeDetails {
     protected String version;
     protected String walletIp;
     protected String walletUa;
+    protected String chequeType;
 
     /**
      * Gets the value of the updateDate property.
@@ -219,6 +222,30 @@ public class GetMoneyInChequeDetails {
      */
     public void setWalletUa(String value) {
         this.walletUa = value;
+    }
+
+    /**
+     * Gets the value of the chequeType property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getChequeType() {
+        return chequeType;
+    }
+
+    /**
+     * Sets the value of the chequeType property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setChequeType(String value) {
+        this.chequeType = value;
     }
 
 }

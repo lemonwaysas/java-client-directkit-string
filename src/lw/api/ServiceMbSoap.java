@@ -307,21 +307,22 @@ public interface ServiceMbSoap {
     /**
      * 
      * @param intermediaryBankCountry
-     * @param boPass
      * @param holderName
      * @param wallet
-     * @param ip
      * @param accountType
+     * @param wlLogin
      * @param holderCountry
      * @param intermediaryBankName
      * @param bankName
      * @param language
      * @param bicCode
-     * @param ua
      * @param accountNumber
+     * @param version
      * @param intermediaryBicCode
+     * @param wlPass
      * @param bankCountry
-     * @param boLogin
+     * @param walletUa
+     * @param walletIp
      * @param comment
      * @return
      *     returns java.lang.String
@@ -331,14 +332,6 @@ public interface ServiceMbSoap {
     @RequestWrapper(localName = "RegisterIBANExtended", targetNamespace = "Service_mb", className = "lw.api.RegisterIBANExtended")
     @ResponseWrapper(localName = "RegisterIBANExtendedResponse", targetNamespace = "Service_mb", className = "lw.api.RegisterIBANExtendedResponse")
     public String registerIBANExtended(
-        @WebParam(name = "ip", targetNamespace = "Service_mb")
-        String ip,
-        @WebParam(name = "ua", targetNamespace = "Service_mb")
-        String ua,
-        @WebParam(name = "boLogin", targetNamespace = "Service_mb")
-        String boLogin,
-        @WebParam(name = "boPass", targetNamespace = "Service_mb")
-        String boPass,
         @WebParam(name = "wallet", targetNamespace = "Service_mb")
         String wallet,
         @WebParam(name = "accountType", targetNamespace = "Service_mb")
@@ -363,8 +356,18 @@ public interface ServiceMbSoap {
         String intermediaryBankCountry,
         @WebParam(name = "comment", targetNamespace = "Service_mb")
         String comment,
+        @WebParam(name = "wlLogin", targetNamespace = "Service_mb")
+        String wlLogin,
+        @WebParam(name = "wlPass", targetNamespace = "Service_mb")
+        String wlPass,
         @WebParam(name = "language", targetNamespace = "Service_mb")
-        String language);
+        String language,
+        @WebParam(name = "version", targetNamespace = "Service_mb")
+        String version,
+        @WebParam(name = "walletIp", targetNamespace = "Service_mb")
+        String walletIp,
+        @WebParam(name = "walletUa", targetNamespace = "Service_mb")
+        String walletUa);
 
     /**
      * 
@@ -379,6 +382,7 @@ public interface ServiceMbSoap {
      * @param version
      * @param wlPass
      * @param walletUa
+     * @param isB2B
      * @param walletIp
      * @param street
      * @param iban
@@ -423,7 +427,9 @@ public interface ServiceMbSoap {
         @WebParam(name = "walletIp", targetNamespace = "Service_mb")
         String walletIp,
         @WebParam(name = "walletUa", targetNamespace = "Service_mb")
-        String walletUa);
+        String walletUa,
+        @WebParam(name = "isB2B", targetNamespace = "Service_mb")
+        String isB2B);
 
     /**
      * 
@@ -1559,6 +1565,7 @@ public interface ServiceMbSoap {
      * 
      * @param walletUa
      * @param updateDate
+     * @param chequeType
      * @param walletIp
      * @param wlLogin
      * @param language
@@ -1585,7 +1592,9 @@ public interface ServiceMbSoap {
         @WebParam(name = "walletIp", targetNamespace = "Service_mb")
         String walletIp,
         @WebParam(name = "walletUa", targetNamespace = "Service_mb")
-        String walletUa);
+        String walletUa,
+        @WebParam(name = "chequeType", targetNamespace = "Service_mb")
+        String chequeType);
 
     /**
      * 
@@ -1623,9 +1632,11 @@ public interface ServiceMbSoap {
      * 
      * @param walletUa
      * @param updateDate
+     * @param walletIdStart
      * @param walletIp
      * @param wlLogin
      * @param language
+     * @param walletIdEnd
      * @param version
      * @param wlPass
      * @return
@@ -1649,7 +1660,11 @@ public interface ServiceMbSoap {
         @WebParam(name = "walletIp", targetNamespace = "Service_mb")
         String walletIp,
         @WebParam(name = "walletUa", targetNamespace = "Service_mb")
-        String walletUa);
+        String walletUa,
+        @WebParam(name = "walletIdStart", targetNamespace = "Service_mb")
+        String walletIdStart,
+        @WebParam(name = "walletIdEnd", targetNamespace = "Service_mb")
+        String walletIdEnd);
 
     /**
      * 
@@ -1865,6 +1880,7 @@ public interface ServiceMbSoap {
      * @param version
      * @param wlPass
      * @param walletUa
+     * @param chequeType
      * @param partner
      * @param walletIp
      * @param comment
@@ -1901,7 +1917,9 @@ public interface ServiceMbSoap {
         @WebParam(name = "walletIp", targetNamespace = "Service_mb")
         String walletIp,
         @WebParam(name = "walletUa", targetNamespace = "Service_mb")
-        String walletUa);
+        String walletUa,
+        @WebParam(name = "chequeType", targetNamespace = "Service_mb")
+        String chequeType);
 
     /**
      * 
@@ -2184,5 +2202,114 @@ public interface ServiceMbSoap {
         String walletUa,
         @WebParam(name = "phone", targetNamespace = "Service_mb")
         String phone);
+
+    /**
+     * 
+     * @param wallet
+     * @param amountCom
+     * @param wlLogin
+     * @param wkToken
+     * @param language
+     * @param amountTot
+     * @param autoCommission
+     * @param version
+     * @param wlPass
+     * @param walletUa
+     * @param walletIp
+     * @param comment
+     * @param returnUrl
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "MoneyInPayTrailInit", action = "Service_mb/MoneyInPayTrailInit")
+    @WebResult(name = "MoneyInPayTrailInitResult", targetNamespace = "Service_mb")
+    @RequestWrapper(localName = "MoneyInPayTrailInit", targetNamespace = "Service_mb", className = "lw.api.MoneyInPayTrailInit")
+    @ResponseWrapper(localName = "MoneyInPayTrailInitResponse", targetNamespace = "Service_mb", className = "lw.api.MoneyInPayTrailInitResponse")
+    public String moneyInPayTrailInit(
+        @WebParam(name = "wkToken", targetNamespace = "Service_mb")
+        String wkToken,
+        @WebParam(name = "wallet", targetNamespace = "Service_mb")
+        String wallet,
+        @WebParam(name = "amountTot", targetNamespace = "Service_mb")
+        String amountTot,
+        @WebParam(name = "amountCom", targetNamespace = "Service_mb")
+        String amountCom,
+        @WebParam(name = "comment", targetNamespace = "Service_mb")
+        String comment,
+        @WebParam(name = "returnUrl", targetNamespace = "Service_mb")
+        String returnUrl,
+        @WebParam(name = "autoCommission", targetNamespace = "Service_mb")
+        String autoCommission,
+        @WebParam(name = "wlLogin", targetNamespace = "Service_mb")
+        String wlLogin,
+        @WebParam(name = "wlPass", targetNamespace = "Service_mb")
+        String wlPass,
+        @WebParam(name = "language", targetNamespace = "Service_mb")
+        String language,
+        @WebParam(name = "version", targetNamespace = "Service_mb")
+        String version,
+        @WebParam(name = "walletIp", targetNamespace = "Service_mb")
+        String walletIp,
+        @WebParam(name = "walletUa", targetNamespace = "Service_mb")
+        String walletUa);
+
+    /**
+     * 
+     * @param walletPayer
+     * @param emailPayer
+     * @param walletReceiver
+     * @param amountCom
+     * @param firstNamePayer
+     * @param wlLogin
+     * @param language
+     * @param amountTot
+     * @param version
+     * @param wlPass
+     * @param lastNamePayer
+     * @param walletUa
+     * @param walletIp
+     * @param comment
+     * @param style
+     * @param optId
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "CreatePaymentForm", action = "Service_mb/CreatePaymentForm")
+    @WebResult(name = "CreatePaymentFormResult", targetNamespace = "Service_mb")
+    @RequestWrapper(localName = "CreatePaymentForm", targetNamespace = "Service_mb", className = "lw.api.CreatePaymentForm")
+    @ResponseWrapper(localName = "CreatePaymentFormResponse", targetNamespace = "Service_mb", className = "lw.api.CreatePaymentFormResponse")
+    public String createPaymentForm(
+        @WebParam(name = "wlLogin", targetNamespace = "Service_mb")
+        String wlLogin,
+        @WebParam(name = "wlPass", targetNamespace = "Service_mb")
+        String wlPass,
+        @WebParam(name = "optId", targetNamespace = "Service_mb")
+        String optId,
+        @WebParam(name = "walletPayer", targetNamespace = "Service_mb")
+        String walletPayer,
+        @WebParam(name = "walletReceiver", targetNamespace = "Service_mb")
+        String walletReceiver,
+        @WebParam(name = "walletIp", targetNamespace = "Service_mb")
+        String walletIp,
+        @WebParam(name = "walletUa", targetNamespace = "Service_mb")
+        String walletUa,
+        @WebParam(name = "amountTot", targetNamespace = "Service_mb")
+        String amountTot,
+        @WebParam(name = "amountCom", targetNamespace = "Service_mb")
+        String amountCom,
+        @WebParam(name = "comment", targetNamespace = "Service_mb")
+        String comment,
+        @WebParam(name = "language", targetNamespace = "Service_mb")
+        String language,
+        @WebParam(name = "version", targetNamespace = "Service_mb")
+        String version,
+        @WebParam(name = "firstNamePayer", targetNamespace = "Service_mb")
+        String firstNamePayer,
+        @WebParam(name = "lastNamePayer", targetNamespace = "Service_mb")
+        String lastNamePayer,
+        @WebParam(name = "emailPayer", targetNamespace = "Service_mb")
+        String emailPayer,
+        @WebParam(name = "style", targetNamespace = "Service_mb")
+        String style);
 
 }

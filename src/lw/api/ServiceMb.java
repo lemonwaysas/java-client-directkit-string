@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "Service_mb", targetNamespace = "Service_mb", wsdlLocation = "https://ws.lemonway.fr/mb/hiep/dev/directkit/service.asmx?wsdl")
+@WebServiceClient(name = "Service_mb", targetNamespace = "Service_mb", wsdlLocation = "https://ws.lemonway.fr/mb/wiseed/dev/directkit/service.asmx?wsdl")
 public class ServiceMb
     extends Service
 {
@@ -30,7 +30,7 @@ public class ServiceMb
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("https://ws.lemonway.fr/mb/hiep/dev/directkit/service.asmx?wsdl");
+            url = new URL("https://ws.lemonway.fr/mb/wiseed/dev/directkit/service.asmx?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

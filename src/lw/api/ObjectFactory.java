@@ -102,6 +102,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link CreatePaymentFormResponse }
+     * 
+     */
+    public CreatePaymentFormResponse createCreatePaymentFormResponse() {
+        return new CreatePaymentFormResponse();
+    }
+
+    /**
      * Create an instance of {@link FastPay }
      * 
      */
@@ -214,6 +222,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link MoneyInPayTrailInit }
+     * 
+     */
+    public MoneyInPayTrailInit createMoneyInPayTrailInit() {
+        return new MoneyInPayTrailInit();
+    }
+
+    /**
      * Create an instance of {@link UpdateWalletStatus }
      * 
      */
@@ -283,6 +299,14 @@ public class ObjectFactory {
      */
     public GetWalletDetails createGetWalletDetails() {
         return new GetWalletDetails();
+    }
+
+    /**
+     * Create an instance of {@link CreatePaymentForm }
+     * 
+     */
+    public CreatePaymentForm createCreatePaymentForm() {
+        return new CreatePaymentForm();
     }
 
     /**
@@ -443,6 +467,14 @@ public class ObjectFactory {
      */
     public MoneyInChequeInitResponse createMoneyInChequeInitResponse() {
         return new MoneyInChequeInitResponse();
+    }
+
+    /**
+     * Create an instance of {@link MoneyInPayTrailInitResponse }
+     * 
+     */
+    public MoneyInPayTrailInitResponse createMoneyInPayTrailInitResponse() {
+        return new MoneyInPayTrailInitResponse();
     }
 
     /**

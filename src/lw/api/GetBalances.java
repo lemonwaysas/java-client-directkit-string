@@ -24,6 +24,8 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;element name="version" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="walletIp" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="walletUa" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="walletIdStart" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="walletIdEnd" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -40,7 +42,9 @@ import javax.xml.bind.annotation.XmlType;
     "language",
     "version",
     "walletIp",
-    "walletUa"
+    "walletUa",
+    "walletIdStart",
+    "walletIdEnd"
 })
 @XmlRootElement(name = "GetBalances")
 public class GetBalances {
@@ -52,6 +56,8 @@ public class GetBalances {
     protected String version;
     protected String walletIp;
     protected String walletUa;
+    protected String walletIdStart;
+    protected String walletIdEnd;
 
     /**
      * Gets the value of the updateDate property.
@@ -219,6 +225,54 @@ public class GetBalances {
      */
     public void setWalletUa(String value) {
         this.walletUa = value;
+    }
+
+    /**
+     * Gets the value of the walletIdStart property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getWalletIdStart() {
+        return walletIdStart;
+    }
+
+    /**
+     * Sets the value of the walletIdStart property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setWalletIdStart(String value) {
+        this.walletIdStart = value;
+    }
+
+    /**
+     * Gets the value of the walletIdEnd property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getWalletIdEnd() {
+        return walletIdEnd;
+    }
+
+    /**
+     * Sets the value of the walletIdEnd property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setWalletIdEnd(String value) {
+        this.walletIdEnd = value;
     }
 
 }
